@@ -44,7 +44,7 @@ if (Meteor.is_client) {
   };
     
   Template.hello.greeting = function () {
-    return "Welcome to iCrave.";
+    return "Push the button.";
   };
 
   Template.hello.events = {
@@ -56,7 +56,7 @@ if (Meteor.is_client) {
   };
 
   Template.welcome.greeting = function () {
-    return "Welcome to iCrave.";
+    return "Push the button.";
   };
 
   Template.welcome.points = function () {
