@@ -1,0 +1,45 @@
+<head>
+  <title>iCrave</title>
+</head>
+
+<body>
+  <div id="outer">
+  {{> welcome}}
+  </div>
+</body>
+
+<template name="hello">
+  <h1>Welcome to the willpower tracker!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+
+<template name="welcome">
+  {{#if user}}
+  <h1>Hello, {{user}}</h1>
+  <p>Total willpower successes: {{points}}</p>
+  {{> main}}
+  {{else}}  
+  <h1>Welcome to the willpower tracker!</h1>
+  {{greeting}}
+  <p>Please enter your username, or create one if you do not have one
+  already.</p>
+  <input type="text" id="userText" />
+  <input type="button" value="Submit" class="userSubmit" />
+  {{#if error}}
+    <span id="error" style="color: red";>
+      {{error}}
+    </span>
+  {{/if}}
+  {{/if}}
+</template>
+
+<template name="main">
+  {{#if status}}
+  <p><img src="button_red.png" /></p>
+  <p><span id="counter"></span>{{timer 10}}</p>
+    
+  {{else}}
+  <p><a class="unclicked" href="#"><img src="button_blue.png" /></p></a>    
+  {{/if}}
+</template>
