@@ -103,9 +103,10 @@ if (Meteor.is_client) {
                 d.html(to_time(count));
                 setTimeout (function() {Template.main.timer(count - 1);}, 1000);
             } else {
-                window.alert("CONGRATULATIONS! Challenge Complete!");
+
                 Users.update({user: Session.get("user").hashCode()}, {$inc: {points: 1}});
                 Session.set("status", 0);
+                window.alert("CONGRATULATIONS! Challenge Complete!");                
             }
         });
       
